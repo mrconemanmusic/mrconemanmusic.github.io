@@ -33,16 +33,46 @@
     .layout{display:grid;gap:28px;grid-template-columns:1fr 370px;align-items:start}
     @media(max-width:980px){.layout{grid-template-columns:1fr}}
 
-    /* Track list */
-    .tracks{display:flex;flex-direction:column;gap:12px}
-    .track{
-      padding:14px 16px;border-radius:14px;border:1px solid var(--line);
-      background:#fff;display:flex;justify-content:space-between;gap:12px;
-      cursor:pointer;transition:background .15s ease
-    }
-    .track:hover{background:#fbfdff}
-    .track small{color:var(--muted)}
-    .track.active{outline:2px solid var(--accent); background:#eef5ff}
+/* Track list — pastel cards per row */
+.tracks .track{
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  display:flex; justify-content:space-between; gap:12px;
+  cursor:pointer; transition:background .15s ease, border-color .15s ease;
+  color:var(--text);
+}
+
+/* Row 1 – soft blue */
+.tracks .track:nth-child(1){ background:#eef5ff; border-color:#d7e6ff; }
+.tracks .track:nth-child(1):hover{ background:#e6f0ff; }
+
+/* Row 2 – mint */
+.tracks .track:nth-child(2){ background:#eefbf3; border-color:#d8f2e3; }
+.tracks .track:nth-child(2):hover{ background:#e5f7ee; }
+
+/* Row 3 – lilac */
+.tracks .track:nth-child(3){ background:#f3efff; border-color:#e1d9ff; }
+.tracks .track:nth-child(3):hover{ background:#ece6ff; }
+
+/* Row 4 – sand */
+.tracks .track:nth-child(4){ background:#fff7e6; border-color:#ffe9c6; }
+.tracks .track:nth-child(4):hover{ background:#fff2d8; }
+
+/* Row 5 – rose */
+.tracks .track:nth-child(5){ background:#fff0f3; border-color:#ffd6de; }
+.tracks .track:nth-child(5):hover{ background:#ffe8ed; }
+
+/* Keep small text muted */
+.tracks .track small{ color:var(--muted); }
+
+/* Active selection still clear and accessible */
+.tracks .track.active{
+  outline:2px solid var(--accent);
+  background:#eef5ff;           /* unify active state */
+  border-color:#cfe0ff;
+}
+
 
     /* Player (sticky on desktop) — no image */
     .player{
