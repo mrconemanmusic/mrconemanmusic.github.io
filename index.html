@@ -1,191 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MrConeman — Composer for Games & Media</title>
-  <meta name="description" content="Composer for games & media. Orchestral, electronic, rock/metal, folk. Seamless loops, stems, game‑ready mixes." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MrConeman - Composer</title>
   <style>
-    :root{
-      --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff; --line:#e8ecf2;
-      --panel:#f7f9fc; --chip:#eef5ff; --chipText:#0b2a5f
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-
-    /* Subtle music-themed background image (optional) */
-    body::before{
-      content:""; position:fixed; inset:0; z-index:-1;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.92)),
-        url('images/bg.jpg') center/cover no-repeat;
-      filter:saturate(0.7) contrast(1.05);
+    header {
+      background: #f7f7f7;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
     }
-
-    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-    header{padding:54px 0 18px;border-bottom:1px solid var(--line)}
-    header h1{font-size:42px;margin:0 0 6px}
-    header p{margin:0;color:var(--muted)}
-
-    /* Layout: content left, player right */
-    .layout{display:grid;gap:28px;grid-template-columns:1fr 360px;align-items:start}
-    @media(max-width:980px){.layout{grid-template-columns:1fr}}
-
-    .section{padding:28px 0;border-bottom:1px solid var(--line)}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 24px rgba(17,27,45,.06)}
-
-    /* Track list (left column) */
-    .tracks{display:flex;flex-direction:column;gap:12px}
-    .track{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;display:flex;justify-content:space-between;gap:12px;cursor:pointer}
-    .track:hover{background:#fbfdff}
-    .track small{color:var(--muted)}
-
-    .badges{display:flex;gap:8px;flex-wrap:wrap}
-    .badge{font-size:12px;color:var(--chipText);background:var(--chip);padding:4px 8px;border-radius:999px}
-
-    /* Right column player */
-    .player{position:sticky;top:24px;padding:16px}
-    .player .art{width:100%;height:180px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
-    .player h3{margin:12px 0 4px}
-    .player p{margin:0;color:var(--muted)}
-    audio{width:100%; margin-top:12px}
-    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .pill{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
-
-    footer{padding:36px 0;text-align:center;color:var(--muted)}
-    nav{margin-top:8px}
-    nav a{color:var(--muted);margin-right:16px}
-    nav a:hover{color:#111}
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      gap: 2rem;
+    }
+    .player {
+      flex: 2;
+    }
+    .about {
+      flex: 1;
+      text-align: center;
+    }
+    .about img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f7f7f7;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
-  <header class="wrap">
+  <header>
     <h1>MrConeman</h1>
     <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about/index.html">About</a>
     </nav>
   </header>
 
-  <main class="wrap section">
-    <div class="layout">
-      <!-- Left column: content -->
+  <div class="container">
+    <!-- Music Player -->
+    <div class="player">
+      <h2>Featured Tracks</h2>
+      <p>(Tracks will auto-loop twice with fadeout in uploaded versions)</p>
+
       <div>
-        <section>
-          <h2>Featured Tracks</h2>
-          <p class="muted">Click a track to load it in the player. Loop/fade behavior is baked into the files you upload.</p>
-          <div class="tracks" id="trackList">
-            <!-- Each .track item selects the player on the right -->
-            <div class="track" data-file="audio/skyreach_outpost.mp3" data-title="Skyreach Outpost" data-sub="Serene hub theme • Adventure" data-art="images/skyreach.jpg" data-notes="Intro 0:00–0:30 • Loop 0:30→end">
-              <div>
-                <strong>Skyreach Outpost</strong>
-                <div><small>Serene hub theme • Adventure</small></div>
-              </div>
-              <small>2:24</small>
-            </div>
-
-            <div class="track" data-file="audio/clockwork_market.mp3" data-title="Clockwork Market" data-sub="Steampunk bazaar • RPG" data-art="images/clockwork.jpg" data-notes="Intro 0:00–0:10 • Loop 0:10→end">
-              <div>
-                <strong>Clockwork Market</strong>
-                <div><small>Steampunk bazaar • RPG</small></div>
-              </div>
-              <small>1:50</small>
-            </div>
-
-            <div class="track" data-file="audio/track3.mp3" data-title="[Track 3]" data-sub="Battle Theme • Action/Metroidvania" data-art="images/track3.jpg" data-notes="Intro 0:00–0:12 • Loop 0:12→end">
-              <div>
-                <strong>[Track 3]</strong>
-                <div><small>Battle Theme • Action/Metroidvania</small></div>
-              </div>
-              <small>2:00</small>
-            </div>
-
-            <div class="track" data-file="audio/track4.mp3" data-title="[Track 4]" data-sub="Atmospheric Snow • Exploration" data-art="images/track4.jpg" data-notes="Intro 0:00–0:24 • Loop 0:24→end">
-              <div>
-                <strong>[Track 4]</strong>
-                <div><small>Atmospheric Snow • Exploration</small></div>
-              </div>
-              <small>2:20</small>
-            </div>
-
-            <div class="track" data-file="audio/track5.mp3" data-title="[Track 5]" data-sub="Beat-'em-up Stage • Groove" data-art="images/track5.jpg" data-notes="Intro 0:00–0:08 • Loop 0:08→end">
-              <div>
-                <strong>[Track 5]</strong>
-                <div><small>Beat-'em-up Stage • Groove</small></div>
-              </div>
-              <small>1:45</small>
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2>About</h2>
-          <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a Northern Ireland–based composer for games & media. I blend guitar-driven energy with orchestral, electronic, and folk textures. I deliver game‑ready assets: seamless loops, stems on request, and mixes that sit with SFX and VO.</p>
-          <div class="badges">
-            <span class="badge">Orchestral</span>
-            <span class="badge">Rock / Metal</span>
-            <span class="badge">Synth / Ambient</span>
-            <span class="badge">World / Folk</span>
-            <span class="badge">Loopable • Stems • Cues</span>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2>Contact</h2>
-          <p>Email: <a href="mailto:hello@mrconeman.io">hello@mrconeman.io</a> • Discord: <code>MrConeman#0000</code></p>
-          <p class="muted">Available for indie projects (Steam/Switch/PC). Happy to provide a short demo to see if we’re a fit.</p>
-        </section>
+        <h3>Skyreach Outpost</h3>
+        <audio controls>
+          <source src="tracks/skyreach.mp3" type="audio/mpeg" />
+        </audio>
+        <p>Serene hub theme • Adventure</p>
       </div>
 
-      <!-- Right column: sticky player -->
-      <aside class="card player" id="player">
-        <img class="art" src="images/skyreach.jpg" alt="Cover art" />
-        <h3>Skyreach Outpost</h3>
-        <p class="muted">Serene hub theme • Adventure</p>
-        <audio id="audio" controls preload="metadata" src="audio/skyreach_outpost.mp3"></audio>
-        <div class="meta">
-          <span class="pill">Intro 0:00–0:30 • Loop 0:30→end</span>
-          <span class="pill">MP3 / WAV available</span>
-        </div>
-      </aside>
+      <div>
+        <h3>Clockwork Market</h3>
+        <audio controls>
+          <source src="tracks/clockwork.mp3" type="audio/mpeg" />
+        </audio>
+        <p>Steampunk bazaar • RPG</p>
+      </div>
+      <!-- Add your other tracks here -->
     </div>
-  </main>
+
+    <!-- Profile & Short Bio -->
+    <div class="about">
+      <img src="images/profile.jpg" alt="Profile photo of MrConeman">
+      <h2>About Me</h2>
+      <p>
+        Hi — I’m Ciaran “MrConeman” Lyttle, a Northern Ireland–based composer for games & media. 
+        I blend guitar-driven energy with orchestral, electronic, and folk textures. I deliver game-ready assets: 
+        seamless loops, stems on request, and mixes that sit with SFX and VO.
+      </p>
+    </div>
+  </div>
 
   <footer>
-    <div class="wrap">© <span id="year"></span> MrConeman • Built for fast loading</div>
+    <p>Contact: <a href="mailto:hello@mrconeman.io">hello@mrconeman.io</a> | Discord: MrConeman#0000</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Playlist loader: clicking a track swaps the player on the right.
-    const list = document.getElementById('trackList');
-    const player = document.getElementById('player');
-    const art = player.querySelector('.art');
-    const title = player.querySelector('h3');
-    const sub = player.querySelector('p');
-    const audio = player.querySelector('#audio');
-    const meta = player.querySelector('.meta .pill');
-
-    list.addEventListener('click', (e)=>{
-      const item = e.target.closest('.track');
-      if(!item) return;
-      const src = item.dataset.file;
-      const t = item.dataset.title;
-      const s = item.dataset.sub;
-      const a = item.dataset.art;
-      const notes = item.dataset.notes || '';
-
-      title.textContent = t;
-      sub.textContent = s;
-      meta.textContent = notes;
-      if(a) art.src = a;
-      audio.src = src;
-      audio.play();
-    });
-  </script>
 </body>
 </html>
-
