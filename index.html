@@ -6,65 +6,13 @@
   <title>MrConeman — Composer for Games & Media</title>
   <meta name="description" content="Composer for games & media. Orchestral • Electronic • Rock/Metal • Folk. Seamless loops, stems, game-ready mixes." />
   <style>
-  .contact-links {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 15px;
-  background-color: #5865F2; /* Discord purple */
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.contact-links a:hover {
-  background-color: #4752C4;
-}
-
-.contact-icon {
-  width: 20px;
-  height: 20px;
-}
-
-    /* Footer (with logo) */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      background-color: #fafafa; /* subtle background */
-      border-top: 1px solid #e5e5e5;
-      color: #5b6773; /* match muted tone */
-    }
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .footer-logo {
-      height: 80px;      /* adjust size as needed */
-      width: auto;
-      opacity: 0.9;      /* slightly softer so it’s not too loud */
-      transition: opacity 0.3s ease;
-      display: block;
-    }
-    .footer-logo:hover {
-      opacity: 1;        /* brighten on hover */
-    }
-
     :root{ --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff; --line:#e8ecf2; --panel:#f7f9fc }
+
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* Optional subtle background image */
+    /* Soft page texture */
     body::before{
       content:""; position:fixed; inset:0; z-index:-1;
       background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.97)),
@@ -94,64 +42,63 @@
       display:flex; justify-content:space-between; gap:12px;
       cursor:pointer; transition:background .15s ease, border-color .15s ease;
       color:var(--text);
+      background:#fff;
     }
-    /* Row 1 – soft blue */
-    .tracks .track:nth-child(1){ background:#eef5ff; border-color:#d7e6ff; }
-    .tracks .track:nth-child(1):hover{ background:#e6f0ff; }
-    /* Row 2 – mint */
-    .tracks .track:nth-child(2){ background:#eefbf3; border-color:#d8f2e3; }
-    .tracks .track:nth-child(2):hover{ background:#e5f7ee; }
-    /* Row 3 – lilac */
-    .tracks .track:nth-child(3){ background:#f3efff; border-color:#e1d9ff; }
-    .tracks .track:nth-child(3):hover{ background:#ece6ff; }
-    /* Row 4 – sand */
-    .tracks .track:nth-child(4){ background:#fff7e6; border-color:#ffe9c6; }
-    .tracks .track:nth-child(4):hover{ background:#fff2d8; }
-    /* Row 5 – rose */
-    .tracks .track:nth-child(5){ background:#fff0f3; border-color:#ffd6de; }
-    .tracks .track:nth-child(5):hover{ background:#ffe8ed; }
-    /* Keep small text muted */
-    .tracks .track small{ color:var(--muted); }
-    /* Active selection */
-    .tracks .track.active{
-      outline:2px solid var(--accent);
-      background:#eef5ff;
-      border-color:#cfe0ff;
-    }
+    .tracks .track:nth-child(1){ background:#eef5ff; border-color:#d7e6ff }
+    .tracks .track:nth-child(1):hover{ background:#e6f0ff }
+    .tracks .track:nth-child(2){ background:#eefbf3; border-color:#d8f2e3 }
+    .tracks .track:nth-child(2):hover{ background:#e5f7ee }
+    .tracks .track:nth-child(3){ background:#f3efff; border-color:#e1d9ff }
+    .tracks .track:nth-child(3):hover{ background:#ece6ff }
+    .tracks .track:nth-child(4){ background:#fff7e6; border-color:#ffe9c6 }
+    .tracks .track:nth-child(4):hover{ background:#fff2d8 }
+    .tracks .track:nth-child(5){ background:#fff0f3; border-color:#ffd6de }
+    .tracks .track:nth-child(5):hover{ background:#ffe8ed }
+    .tracks .track small{ color:var(--muted) }
+    .tracks .track.active{ outline:2px solid var(--accent); background:#eef5ff; border-color:#cfe0ff }
 
     /* Player (sticky on desktop) — no image */
     .player{
-      position:sticky;top:24px;padding:16px;background:var(--panel);
-      border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 24px rgba(17,27,45,.06)
+      position:sticky; top:24px; padding:16px; background:var(--panel);
+      border:1px solid var(--line); border-radius:16px; box-shadow:0 10px 24px rgba(17,27,45,.06)
     }
     .player h3{margin:0 0 4px}
     .player .muted{color:var(--muted);margin:0 0 10px}
     .player audio{width:100%;display:block;margin:6px 0 10px}
-
-    /* Little note pill under the player */
-    .pill{
-      display:inline-block;font-size:12px;border:1px solid var(--line);
-      border-radius:999px;padding:6px 10px;color:#0b2a5f;background:#f0f6ff
-    }
+    .pill{ display:inline-block; font-size:12px; border:1px solid var(--line);
+      border-radius:999px; padding:6px 10px; color:#0b2a5f; background:#f0f6ff }
 
     /* About teaser with profile image */
     .aboutTeaser{
-      display:grid;gap:18px;grid-template-columns:110px 1fr;align-items:center;
-      background:#fff;border:1px solid var(--line);border-radius:16px;
-      padding:16px;box-shadow:0 8px 20px rgba(17,27,45,.04)
+      display:grid; gap:18px; grid-template-columns:110px 1fr; align-items:center;
+      background:#fff; border:1px solid var(--line); border-radius:16px;
+      padding:16px; box-shadow:0 8px 20px rgba(17,27,45,.04)
     }
     .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
 
-    /* Contact links with icons */
+    /* Contact links with icons (buttons) */
     .contact-links{ display:flex; flex-direction:column; gap:10px; margin-top:6px }
-    .contact-link{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px; border:1px solid var(--line); border-radius:12px;
-      background:#fff; color:var(--text); text-decoration:none;
+    .contact-btn{
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:12px; color:#fff; text-decoration:none;
+      font-weight:600; justify-content:center;
+      transition:transform .08s ease, filter .2s ease;
     }
-    .contact-link:hover{ background:#fbfdff }
-    .icon{ width:18px; height:18px; display:block }
-    .toast{ font-size:12px; color:var(--muted); display:none; margin-top:6px }
+    .contact-btn:active{ transform:translateY(1px) }
+    .btn-email{ background:#6B7CFF } /* pleasant indigo */
+    .btn-email:hover{ filter:brightness(0.95) }
+    .btn-discord{ background:#5865F2 }
+    .btn-discord:hover{ filter:brightness(0.95) }
+    .icon{ width:18px; height:18px; display:block; fill:#fff }
+
+    /* Footer (with logo) */
+    footer{
+      text-align:center; padding:2rem 1rem; margin-top:3rem;
+      background-color:#fafafa; border-top:1px solid #e5e5e5; color:#5b6773
+    }
+    .footer-content{ display:flex; flex-direction:column; align-items:center; gap:.75rem }
+    .footer-logo{ height:80px; width:auto; opacity:.9; transition:opacity .3s ease; display:block }
+    .footer-logo:hover{ opacity:1 }
   </style>
 </head>
 <body>
@@ -250,22 +197,24 @@
           <h2>Contact</h2>
 
           <div class="contact-links">
-            <!-- Email -->
-            <a class="contact-link" href="mailto:hello@mrconeman.io">
-              <!-- Mail icon -->
+            <!-- Email button -->
+            <a class="contact-btn btn-email" href="mailto:hello@mrconeman.io">
+              <!-- White envelope -->
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 3.2-7.3 5.1a1 1 0 0 1-1.4 0L4 7.2V6l7.3 5.1c.4.3 1 .3 1.4 0L20 6v1.2Z"/>
+                <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2.8 8.2 5.7c.5.3 1.1.3 1.6 0L21 7.8V7H3v.8z" fill="#fff"/>
               </svg>
               <span>hello@mrconeman.io</span>
             </a>
 
-            <!-- Discord (opens Discord DMs and copies handle) -->
-           <div class="contact-links">
-  <a href="https://discord.com/users/231138809482313728" target="_blank" rel="noopener noreferrer">
-    <img src="images/discord-logo.png" alt="Discord" class="contact-icon">
-  </a>
-</div>
-
+            <!-- Discord button (opens your profile/DM) -->
+            <a class="contact-btn btn-discord" href="https://discord.com/users/231138809482313728" target="_blank" rel="noopener">
+              <!-- Discord logo (white) -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#fff" d="M19.54 4.23A17.3 17.3 0 0 0 15.86 3l-.18.32a16.1 16.1 0 0 1 3.04 1.49c-1.33-.63-2.68-1.07-4.05-1.31a15.9 15.9 0 0 0-3.02-.29c-1.01 0-2.01.1-3 .29-1.38.24-2.74.68-4.07 1.31.98-.6 1.99-1.1 3.03-1.49L7.14 3C5.9 3.33 4.7 3.81 3.54 4.43 1.7 7 1.07 9.47 1.21 11.9c1.23 1.82 3.05 3.1 5.18 3.88a12.76 12.76 0 0 0 .9-1.44c-.49-.18-.96-.4-1.41-.66l.34-.26c2.74 1.28 5.7 1.28 8.44 0l.34.26c-.45.26-.92.48-1.41.66.26.5.56.99.9 1.44 2.13-.78 3.95-2.06 5.18-3.88.21-3.17-.6-5.62-2.33-7.67zM9.7 12.85c-.75 0-1.36-.72-1.36-1.6 0-.89.61-1.6 1.36-1.6.76 0 1.37.71 1.36 1.6 0 .88-.6 1.6-1.36 1.6zm4.6 0c-.75 0-1.36-.72-1.36-1.6 0-.89.61-1.6 1.36-1.6.76 0 1.36.71 1.36 1.6 0 .88-.6 1.6-1.36 1.6z"/>
+              </svg>
+              <span>Discord — MrConeman</span>
+            </a>
+          </div>
 
           <p class="muted" style="margin-top:10px;">
             Available for composition work for games &amp; media. Feel free to get in touch if you think I'd be a match for your project.
@@ -290,7 +239,6 @@
   <footer>
     <div class="footer-content">
       <a href="index.html" aria-label="Back to Home">
-        <!-- URL-encoded space to ensure GitHub Pages serves correctly -->
         <img src="images/Logo%20No%20Background.png" alt="MrConeman Logo" class="footer-logo" loading="lazy">
       </a>
       <p>© <span id="year"></span> MrConeman • Built for fast loading</p>
@@ -300,48 +248,28 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const list   = document.getElementById('trackList');
-    const audio  = document.getElementById('audio');
-    const pTitle = document.getElementById('pTitle');
-    const pSub   = document.getElementById('pSub');
-    const pNotes = document.getElementById('pNotes');
-    const pErr   = document.getElementById('pErr');
-
     // click-to-load from left list
+    const list = document.getElementById('trackList');
+    const audio = document.getElementById('audio');
+    const pTitle = document.getElementById('pTitle');
+    const pSub = document.getElementById('pSub');
+    const pNotes = document.getElementById('pNotes');
+    const pErr = document.getElementById('pErr');
+
     list.addEventListener('click', (e)=>{
       const item = e.target.closest('.track');
       if (!item) return;
-
-      // UI highlight
       [...list.querySelectorAll('.track')].forEach(t=>t.classList.remove('active'));
       item.classList.add('active');
-
-      // Set player data
       pTitle.textContent = item.dataset.title || '';
       pSub.textContent   = item.dataset.sub   || '';
       pNotes.textContent = item.dataset.notes || '';
       pErr.style.display = 'none';
-
       audio.src = item.dataset.file || '';
-      audio.play().catch(()=>{/* ignore autoplay block */});
+      audio.play().catch(()=>{});
     });
 
-    // show a small message if a file can’t load
     audio.addEventListener('error', ()=>{ pErr.style.display = 'block'; });
-
-    // Discord: copy handle on click (link also opens Discord DMs)
-    const discordLink = document.getElementById('discordLink');
-    const discordHandle = document.getElementById('discordHandle').textContent.trim();
-    const toast = document.getElementById('copyToast');
-
-    discordLink.addEventListener('click', ()=>{
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(discordHandle).then(()=>{
-          toast.style.display = 'inline';
-          setTimeout(()=> toast.style.display = 'none', 1500);
-        }).catch(()=>{ /* ignore clipboard errors */ });
-      }
-    });
   </script>
 </body>
 </html>
