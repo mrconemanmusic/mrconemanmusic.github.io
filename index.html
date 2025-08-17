@@ -35,21 +35,38 @@
 
     /* Track list */
     .tracks{display:flex;flex-direction:column;gap:12px}
-    .track{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;display:flex;justify-content:space-between;gap:12px;cursor:pointer}
+    .track{
+      padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+      background:#fff;display:flex;justify-content:space-between;gap:12px;
+      cursor:pointer;transition:background .15s ease
+    }
     .track:hover{background:#fbfdff}
     .track small{color:var(--muted)}
+    .track.active{outline:2px solid var(--accent); background:#eef5ff}
 
-    /* Player (sticky on desktop) */
-    .player{position:sticky;top:24px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 24px rgba(17,27,45,.06)}
-    .player .art{width:100%;height:180px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
-    .player h3{margin:12px 0 4px}
-    .player p{margin:0;color:var(--muted)}
-    audio{width:100%; margin-top:12px}
-    .pill{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);margin-top:8px}
+    /* Player (sticky on desktop) — no image */
+    .player{
+      position:sticky;top:24px;padding:16px;background:var(--panel);
+      border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 24px rgba(17,27,45,.06)
+    }
+    .player h3{margin:0 0 4px}
+    .player .muted{color:var(--muted);margin:0 0 10px}
+    .player audio{width:100%;display:block;margin:6px 0 10px}
+
+    /* Little note pill under the player */
+    .pill{
+      display:inline-block;font-size:12px;border:1px solid var(--line);
+      border-radius:999px;padding:6px 10px;color:#0b2a5f;background:#f0f6ff
+    }
 
     /* About teaser with profile image */
-    .aboutTeaser{display:grid;gap:18px;grid-template-columns:110px 1fr;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 20px rgba(17,27,45,.04)}
+    .aboutTeaser{
+      display:grid;gap:18px;grid-template-columns:110px 1fr;align-items:center;
+      background:#fff;border:1px solid var(--line);border-radius:16px;
+      padding:16px;box-shadow:0 8px 20px rgba(17,27,45,.04)
+    }
     .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+
     footer{padding:36px 0;text-align:center;color:var(--muted)}
   </style>
 </head>
@@ -58,8 +75,8 @@
     <h1>MrConeman</h1>
     <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
@@ -73,7 +90,10 @@
 
           <div class="tracks" id="trackList">
             <!-- Each .track item selects the player on the right -->
-            <div class="track" data-file="audio/skyreach_outpost.mp3" data-title="Skyreach Outpost" data-sub="Serene hub theme • Adventure" data-art="images/skyreach.jpg" data-notes="Intro 0:00–0:30 • Loop 0:30→end">
+            <div class="track" data-file="audio/skyreach_outpost.mp3"
+                 data-title="Skyreach Outpost"
+                 data-sub="Serene hub theme • Adventure"
+                 data-notes="Intro 0:00–0:30 • Loop 0:30→end">
               <div>
                 <strong>Skyreach Outpost</strong>
                 <div><small>Serene hub theme • Adventure</small></div>
@@ -81,7 +101,10 @@
               <small>2:24</small>
             </div>
 
-            <div class="track" data-file="audio/clockwork_market.mp3" data-title="Clockwork Market" data-sub="Steampunk bazaar • RPG" data-art="images/clockwork.jpg" data-notes="Intro 0:00–0:10 • Loop 0:10→end">
+            <div class="track" data-file="audio/clockwork_market.mp3"
+                 data-title="Clockwork Market"
+                 data-sub="Steampunk bazaar • RPG"
+                 data-notes="Intro 0:00–0:10 • Loop 0:10→end">
               <div>
                 <strong>Clockwork Market</strong>
                 <div><small>Steampunk bazaar • RPG</small></div>
@@ -89,7 +112,10 @@
               <small>1:50</small>
             </div>
 
-            <div class="track" data-file="audio/track3.mp3" data-title="[Track 3]" data-sub="Battle Theme • Action/Metroidvania" data-art="images/track3.jpg" data-notes="Intro 0:00–0:12 • Loop 0:12→end">
+            <div class="track" data-file="audio/track3.mp3"
+                 data-title="[Track 3]"
+                 data-sub="Battle Theme • Action/Metroidvania"
+                 data-notes="Intro 0:00–0:12 • Loop 0:12→end">
               <div>
                 <strong>[Track 3]</strong>
                 <div><small>Battle Theme • Action/Metroidvania</small></div>
@@ -97,7 +123,10 @@
               <small>~2:00</small>
             </div>
 
-            <div class="track" data-file="audio/track4.mp3" data-title="[Track 4]" data-sub="Atmospheric Snow • Exploration" data-art="images/track4.jpg" data-notes="Intro 0:00–0:24 • Loop 0:24→end">
+            <div class="track" data-file="audio/track4.mp3"
+                 data-title="[Track 4]"
+                 data-sub="Atmospheric Snow • Exploration"
+                 data-notes="Intro 0:00–0:24 • Loop 0:24→end">
               <div>
                 <strong>[Track 4]</strong>
                 <div><small>Atmospheric Snow • Exploration</small></div>
@@ -105,10 +134,13 @@
               <small>~2:20</small>
             </div>
 
-            <div class="track" data-file="audio/track5.mp3" data-title="[Track 5]" data-sub="Beat-'em-up Stage • Groove" data-art="images/track5.jpg" data-notes="Intro 0:00–0:08 • Loop 0:08→end">
+            <div class="track" data-file="audio/track5.mp3"
+                 data-title="[Track 5]"
+                 data-sub="Beat-’em-up Stage • Groove"
+                 data-notes="Intro 0:00–0:08 • Loop 0:08→end">
               <div>
                 <strong>[Track 5]</strong>
-                <div><small>Beat-'em-up Stage • Groove</small></div>
+                <div><small>Beat-’em-up Stage • Groove</small></div>
               </div>
               <small>~1:45</small>
             </div>
@@ -120,7 +152,7 @@
             <img src="images/profile.jpg" class="avatar" alt="Ciaran “MrConeman” Lyttle" />
             <div>
               <h3 style="margin:0 0 6px">About</h3>
-              <p style="margin:0">Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a Northern Ireland–based composer for games & media. I deliver game-ready music—clean loop edits, stems on request, and mixes that play nicely with SFX/VO. I’m currently available for indie titles (Steam/Switch/PC) and happy to share a short custom demo to check fit. <a href="/about.html">More →</a></p>
+              <p style="margin:0">Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a Northern Ireland–based composer for games &amp; media. I deliver game-ready music—clean loop edits, stems on request, and mixes that play nicely with SFX/VO. I’m currently available for indie titles (Steam/Switch/PC) and happy to share a short custom demo to check fit. <a href="about.html">More →</a></p>
             </div>
           </div>
         </section>
@@ -132,19 +164,16 @@
         </section>
       </div>
 
-      <!-- Right column: sticky player -->
-     <!-- Keep your list container id="trackList" -->
-<div class="track" data-file="audio/skyreach_outpost.mp3"
-     data-title="Skyreach Outpost"
-     data-sub="Serene hub theme • Adventure"
-     data-notes="Intro 0:00–0:30 • Loop 0:30→end">
-  <div>
-    <strong>Skyreach Outpost</strong>
-    <div><small>Serene hub theme • Adventure</small></div>
-  </div>
-  <small>2:24</small>
-</div>
-
+      <!-- Right column: sticky, minimal player -->
+      <aside class="player" id="player">
+        <h3 id="pTitle">Skyreach Outpost</h3>
+        <p class="muted" id="pSub">Serene hub theme • Adventure</p>
+        <audio id="audio" controls preload="metadata" src="audio/skyreach_outpost.mp3"></audio>
+        <div class="pill" id="pNotes">Intro 0:00–0:30 • Loop 0:30→end</div>
+        <div id="pErr" class="muted" style="display:none; margin-top:8px; font-size:13px;">
+          Couldn’t load this audio. Please refresh or try again later.
+        </div>
+      </aside>
     </div>
   </main>
 
@@ -155,25 +184,34 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Playlist loader: clicking a track swaps the player on the right.
-    const list = document.getElementById('trackList');
-    const player = document.getElementById('player');
-    const art = player.querySelector('.art');
-    const title = player.querySelector('h3');
-    const sub = player.querySelector('p');
-    const audio = player.querySelector('#audio');
-    const pill = player.querySelector('.pill');
+    const list   = document.getElementById('trackList');
+    const audio  = document.getElementById('audio');
+    const pTitle = document.getElementById('pTitle');
+    const pSub   = document.getElementById('pSub');
+    const pNotes = document.getElementById('pNotes');
+    const pErr   = document.getElementById('pErr');
 
+    // click-to-load from left list
     list.addEventListener('click', (e)=>{
       const item = e.target.closest('.track');
-      if(!item) return;
-      title.textContent = item.dataset.title;
-      sub.textContent = item.dataset.sub;
-      pill.textContent = item.dataset.notes || '';
-      if(item.dataset.art) art.src = item.dataset.art;
-      audio.src = item.dataset.file;
-      audio.play();
+      if (!item) return;
+
+      // UI highlight
+      [...list.querySelectorAll('.track')].forEach(t=>t.classList.remove('active'));
+      item.classList.add('active');
+
+      // Set player data
+      pTitle.textContent = item.dataset.title || '';
+      pSub.textContent   = item.dataset.sub   || '';
+      pNotes.textContent = item.dataset.notes || '';
+      pErr.style.display = 'none';
+
+      audio.src = item.dataset.file || '';
+      audio.play().catch(()=>{/* ignore autoplay block */});
     });
+
+    // show a small message if a file can’t load
+    audio.addEventListener('error', ()=>{ pErr.style.display = 'block'; });
   </script>
 </body>
 </html>
