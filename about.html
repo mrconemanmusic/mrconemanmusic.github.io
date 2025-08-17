@@ -33,7 +33,29 @@
     .avatar{width:260px;height:260px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
     .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
     .badge{font-size:12px;color:var(--chipText);background:var(--chip);padding:4px 8px;border-radius:999px}
-    footer{padding:36px 0;text-align:center;color:var(--muted)}
+
+    /* Footer (with logo) */
+    footer{
+      text-align:center;
+      padding:2rem 1rem;
+      margin-top:3rem;
+      background-color:#fafafa;
+      border-top:1px solid #e5e5e5;
+      color:var(--muted);
+    }
+    .footer-content{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:0.75rem;
+    }
+    .footer-logo{
+      height:80px;
+      width:auto;
+      opacity:0.9;
+      transition:opacity 0.3s ease;
+    }
+    .footer-logo:hover{ opacity:1; }
 
     .gallery{display:grid;gap:16px}
     @media(min-width:720px){.gallery{grid-template-columns:1fr 1fr}}
@@ -72,7 +94,8 @@
           </div>
           <div>
             <h2>About</h2>
-          <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a <strong>composer for games &amp; media</strong>, based in Belfast, Ireland. I deliver <strong>game-ready assets</strong>: seamless loop edits, stems for interactive scoring, and mixes that leave room for SFX and voice. I’m currently taking on <strong>indie projects</strong> and can provide a short custom demo to see if we’re a fit.</p> <p>I’ve had a <strong>lifelong relationship with games and music</strong> — they grew up together for me. I studied music at school, became a <strong>multi-instrumentalist</strong> (guitar/bass/keys/programming), and in recent years I’ve focused on writing and producing original cues with modern tools (Cubase + high-quality virtual instruments) alongside live guitars where it serves the track.</p>
+            <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a <strong>composer for games &amp; media</strong>, based in Belfast, Ireland. I deliver <strong>game-ready assets</strong>: seamless loop edits, stems for interactive scoring, and mixes that leave room for SFX and voice. I’m currently taking on <strong>indie projects</strong> and can provide a short custom demo to see if we’re a fit.</p>
+            <p>I’ve had a <strong>lifelong relationship with games and music</strong> — they grew up together for me. I studied music at school, became a <strong>multi-instrumentalist</strong> (guitar/bass/keys/programming), and in recent years I’ve focused on writing and producing original cues with modern tools (Cubase + high-quality virtual instruments) alongside live guitars where it serves the track.</p>
             <div class="badges">
               <span class="badge">Orchestral </span>
               <span class="badge">Rock / Metal</span>
@@ -136,7 +159,12 @@
   </main>
 
   <footer>
-    <div class="wrap">© <span id="year"></span> MrConeman</div>
+    <div class="wrap footer-content">
+      <a href="index.html">
+        <img src="images/Logo No Background.png" alt="MrConeman Logo" class="footer-logo" />
+      </a>
+      <span>© <span id="year"></span> MrConeman</span>
+    </div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
