@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — MrConeman</title>
+  <meta name="description" content="About MrConeman — composer for games & media." />
+  <style>
+    :root{ --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff; --line:#e8ecf2; --panel:#f7f9fc; --chip:#eef5ff; --chipText:#0b2a5f }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.95)), url('images/bg.jpg') center/cover no-repeat;filter:saturate(.8) contrast(1.05)}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+    header{padding:54px 0 18px;border-bottom:1px solid var(--line)}
+    header h1{font-size:42px;margin:0 0 6px}
+    header p{margin:0;color:var(--muted)}
+    nav{margin-top:8px}
+    nav a{color:var(--muted);margin-right:16px}
+    nav a:hover{color:#111}
+    .section{padding:32px 0;border-bottom:1px solid var(--line)}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 24px rgba(17,27,45,.06);padding:22px}
+    .row{display:grid;gap:24px}
+    @media(min-width:900px){.row{grid-template-columns:280px 1fr}}
+    .avatar{width:260px;height:260px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge{font-size:12px;color:var(--chipText);background:var(--chip);padding:4px 8px;border-radius:999px}
+    .fact-grid{display:grid;gap:12px;margin-top:12px}
+    @media(min-width:700px){.fact-grid{grid-template-columns:repeat(2,1fr)}}
+    footer{padding:36px 0;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1>MrConeman</h1>
+    <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="card">
+        <div class="row">
+          <div>
+            <!-- Upload your photo to images/profile.jpg -->
+            <img src="images/profile.jpg" alt="Ciaran “MrConeman” Lyttle" class="avatar" />
+          </div>
+          <div>
+            <h2>About</h2>
+            <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a Northern Ireland–based composer for games & media. I blend guitar-driven energy with orchestral, electronic, and folk textures. I deliver game‑ready assets: seamless loops, stems for interactive scoring, and mixes that leave space for SFX and VO.</p>
+            <div class="badges">
+              <span class="badge">Orchestral Hybrid</span>
+              <span class="badge">Rock / Metal</span>
+              <span class="badge">Synth / Ambient</span>
+              <span class="badge">Celtic / Folk</span>
+              <span class="badge">Loopable • Stems • Cues</span>
+            </div>
+            <div class="fact-grid">
+              <div class="card" style="padding:14px"><strong>DAW</strong><br/>Cubase</div>
+              <div class="card" style="padding:14px"><strong>Also plays</strong><br/>Guitar (lead/rhythm), bass</div>
+              <div class="card" style="padding:14px"><strong>Portfolio focus</strong><br/>Battle, hub/market, ambient exploration, story/emotion, retro-inspired</div>
+              <div class="card" style="padding:14px"><strong>Delivery</strong><br/>WAV/OGG, stems on request, clean loop edits</div>
+            </div>
+            <p style="margin-top:12px">Contact: <a href="mailto:hello@mrconeman.io">hello@mrconeman.io</a> • Discord: <code>MrConeman#0000</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Selected Highlights</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Skyreach Outpost</strong> — serene/adventurous hub theme (looping from 0:30).</li>
+          <li><strong>Clockwork Market</strong> — steampunk bazaar groove with light mechanical percussion.</li>
+          <li><strong>[Upcoming]</strong> Arena battle cue (rock/electronic hybrid), narrative/emotional cue, and a retro/niche track.</li>
+        </ul>
+        <p style="margin-top:10px">Available for indie projects (Steam/Switch/PC). Happy to provide a short demo to see if we’re a fit.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> MrConeman</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
