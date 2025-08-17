@@ -30,15 +30,16 @@
 @media(min-width:720px){.gallery{grid-template-columns:1fr 1fr}}
 .gallery img{width:100%;border-radius:12px;object-fit:cover;border:1px solid var(--line);aspect-ratio:16/9;background:#fff}
 .caption{color:var(--muted);font-size:14px;margin-top:6px}
-    .social { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px }
-.btn {
+   .social{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:12px }
+.btn{
   display:inline-flex; align-items:center; gap:8px;
   padding:8px 12px; border:1px solid var(--line); border-radius:999px;
-  background:#eef5ff; color:#0b2a5f; text-decoration:none; font-size:14px;
+  background:#eef5ff; color:#0b2a5f; text-decoration:none; font-size:14px
 }
-.btn svg { width:18px; height:18px; display:block }
-.svg-spotify { fill:#1DB954 }
-.svg-youtube { fill:#FF0033 }
+.btn:hover{ background:#e7f0ff }
+.btn svg{ width:18px; height:18px; display:block }
+.svg-spotify{ fill:#1DB954 }
+.svg-youtube{ fill:#FF0033 }
 <head>
   <style>
     .beyond-games {
