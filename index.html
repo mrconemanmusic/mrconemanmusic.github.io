@@ -6,6 +6,32 @@
   <title>MrConeman — Composer for Games & Media</title>
   <meta name="description" content="Composer for games & media. Orchestral • Electronic • Rock/Metal • Folk. Seamless loops, stems, game-ready mixes." />
   <style>
+    footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  background-color: #fafafa; /* subtle background */
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  height: 80px;      /* adjust size as needed */
+  width: auto;
+  opacity: 0.9;      /* slightly softer so it’s not too loud */
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;        /* brighten on hover */
+}
+
     :root{ --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff; --line:#e8ecf2; --panel:#f7f9fc }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
@@ -204,9 +230,15 @@
     </div>
   </main>
 
-  <footer>
-    <div class="wrap">© <span id="year"></span> MrConeman • Built for fast loading</div>
-  </footer>
+<footer>
+  <div class="footer-content">
+    <p>© 2025 MrConeman • Built for fast loading</p>
+    <a href="index.html">
+      <img src="logo.jpg" alt="MrConeman Logo" class="footer-logo">
+    </a>
+  </div>
+</footer>
+
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
