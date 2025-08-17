@@ -6,11 +6,20 @@
   <title>About — MrConeman</title>
   <meta name="description" content="About MrConeman — composer for games & media." />
   <style>
-    :root{ --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff; --line:#e8ecf2; --panel:#f7f9fc; --chip:#eef5ff; --chipText:#0b2a5f }
+    :root{
+      --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff;
+      --line:#e8ecf2; --panel:#f7f9fc; --chip:#eef5ff; --chipText:#0b2a5f
+    }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.95)), url('images/bg.jpg') center/cover no-repeat;filter:saturate(.85) contrast(1.05)}
+    /* Optional faint texture behind page. Remove this block if you don't want it. */
+    body::before{
+      content:""; position:fixed; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.95)),
+                 url('images/bg.jpg') center/cover no-repeat;
+      filter:saturate(.85) contrast(1.05)
+    }
     .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
     header{padding:54px 0 18px;border-bottom:1px solid var(--line);text-align:center}
     header h1{font-size:42px;margin:0 0 6px}
@@ -26,58 +35,24 @@
     .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
     .badge{font-size:12px;color:var(--chipText);background:var(--chip);padding:4px 8px;border-radius:999px}
     footer{padding:36px 0;text-align:center;color:var(--muted)}
+
+    /* Gallery for the “Behind the Scenes” section */
     .gallery{display:grid;gap:16px}
-@media(min-width:720px){.gallery{grid-template-columns:1fr 1fr}}
-.gallery img{width:100%;border-radius:12px;object-fit:cover;border:1px solid var(--line);aspect-ratio:16/9;background:#fff}
-.caption{color:var(--muted);font-size:14px;margin-top:6px}
-   .social{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:12px }
-.btn{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:8px 12px; border:1px solid var(--line); border-radius:999px;
-  background:#eef5ff; color:#0b2a5f; text-decoration:none; font-size:14px
-}
-.btn:hover{ background:#e7f0ff }
-.btn svg{ width:18px; height:18px; display:block }
-.svg-spotify{ fill:#1DB954 }
-.svg-youtube{ fill:#FF0033 }
-<head>
-  <style>
-    .beyond-games {
-      text-align: center;
-    }
+    @media(min-width:720px){.gallery{grid-template-columns:1fr 1fr}}
+    .gallery img{width:100%;border-radius:12px;object-fit:cover;border:1px solid var(--line);aspect-ratio:16/9;background:#fff}
+    .caption{color:var(--muted);font-size:14px;margin-top:6px}
 
-    .link-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
+    /* Social pill buttons with inline SVG icons */
+    .social{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:12px }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border:1px solid var(--line); border-radius:999px;
+      background:#eef5ff; color:#0b2a5f; text-decoration:none; font-size:14px
     }
-
-    .btn-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #f0f6ff;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: #1e3a8a;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-
-    .btn-link:hover {
-      background: #e0edff;
-    }
-
-    .btn-link img {
-      width: 20px;
-      height: 20px;
-    }
-  </style>
-</head>
-
+    .btn:hover{ background:#e7f0ff }
+    .btn svg{ width:18px; height:18px; display:block }
+    .svg-spotify{ fill:#1DB954 }
+    .svg-youtube{ fill:#FF0033 }
   </style>
 </head>
 <body>
@@ -85,27 +60,28 @@
     <h1>MrConeman</h1>
     <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
   <main class="wrap">
+    <!-- Top card with avatar + bio -->
     <section class="section">
       <div class="card">
         <div class="row">
           <div>
-            <!-- Put your headshot at images/profile.jpg (JPG) -->
-           <img src="images/delorean.png" alt="Ciaran “MrConeman” Lyttle" class="avatar" />
+            <!-- Use your DeLorean image here -->
+            <img src="images/delorean.jpg" alt="Ciaran “MrConeman” Lyttle" class="avatar" />
           </div>
           <div>
-           <h2>About</h2>
+            <h2>About</h2>
 
-<p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a <strong>composer for games &amp; media</strong>. Based in Belfast, Ireland. I deliver <strong>game-ready assets</strong>: seamless loop edits, stems for interactive scoring, and mixes that leave room for SFX and voice. I’m currently taking on <strong>indie projects</strong> and can provide a short custom demo to see if we’re a fit.</p>
+            <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a <strong>composer for games &amp; media</strong>, based in Belfast, Ireland. I deliver <strong>game-ready assets</strong>: seamless loop edits, stems for interactive scoring, and mixes that leave room for SFX and voice. I’m currently taking on <strong>indie projects</strong> and can provide a short custom demo to see if we’re a fit.</p>
 
-<p>I’ve had a <strong>lifelong relationship with games and music</strong>—they grew up together for me. I studied music at school, became a <strong>multi-instrumentalist</strong> (guitar/bass/keys/programming), and in recent years I’ve focused on writing and producing original cues with modern tools (Cubase + high-quality virtual instruments) alongside live guitars where it serves the track.</p>
+            <p>I’ve had a <strong>lifelong relationship with games and music</strong> — they grew up together for me. I studied music at school, became a <strong>multi-instrumentalist</strong> (guitar/bass/keys/programming), and in recent years I’ve focused on writing and producing original cues with modern tools (Cubase + high-quality virtual instruments) alongside live guitars where it serves the track.</p>
 
-<p>Outside of game scoring, I release music as <strong>MrConeman</strong> (including the lofi/boom-bap album <em>There’s A Lot Going On</em> on Spotify) and I’m the guitarist/songwriter in <strong>Dead Addiction</strong> (<em>…of Vice and Men</em>). I also take on session/freelance work, which keeps my production chops sharp and my workflow fast. If you’re looking for someone collaborative, responsive, and comfortable delivering stems, alternates, and loop-ready mixes, I’d love to chat.</p>
+            <p>Outside of game scoring, I release music as <strong>MrConeman</strong> (including the lofi/boom-bap album <em>There’s A Lot Going On</em> on Spotify) and I’m the guitarist/songwriter in <strong>Dead Addiction</strong> (<em>…of Vice and Men</em>). I also take on session/freelance work, which keeps my production chops sharp and my workflow fast. If you’re looking for someone collaborative, responsive, and comfortable delivering stems, alternates, and loop-ready mixes, I’d love to chat.</p>
 
             <div class="badges">
               <span class="badge">Orchestral Hybrid</span>
@@ -119,29 +95,56 @@
         </div>
       </div>
     </section>
-<section class="beyond-games">
-  <h2>Beyond Games</h2>
-  <p>
-    Outside of game scoring, I also release music independently and with my band.
-    These projects highlight a broader side of my work as a composer, songwriter,
-    and multi-instrumentalist.
-  </p>
 
-  <div class="link-buttons">
-    <a href="https://open.spotify.com/artist/your-mrconeman-id" target="_blank" class="btn-link">
-      <img src="images/spotify.png" alt="Spotify Logo"> Spotify — MrConeman
-    </a>
-    <a href="https://open.spotify.com/artist/your-dead-addiction-id" target="_blank" class="btn-link">
-      <img src="images/spotify.png" alt="Spotify Logo"> Spotify — Dead Addiction
-    </a>
-    <a href="https://www.youtube.com/mrconeman" target="_blank" class="btn-link">
-      <img src="images/youtube.png" alt="YouTube Logo"> YouTube — MrConeman
-    </a>
-  </div>
-</section>
+    <!-- Behind the Scenes -->
+    <section class="section">
+      <h2>Behind the Scenes</h2>
+      <div class="card">
+        <div class="gallery">
+          <div>
+            <img src="images/studio.jpg" alt="MrConeman in the studio" />
+            <div class="caption">In the studio — writing, recording and mixing in Cubase.</div>
+          </div>
+          <div>
+            <img src="images/delorean.jpg" alt="Live performance / band promo" />
+            <div class="caption">Live/performer roots — the musician side that informs the compositions.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <!-- Beyond Games -->
+    <section class="section">
+      <h2>Beyond Games</h2>
+      <p>Outside of game scoring, I also release music independently and with my band. These projects highlight a broader side of my work as a composer, songwriter, and multi-instrumentalist.</p>
 
+      <div class="social">
+        <!-- Spotify — MrConeman -->
+        <a class="btn" href="https://open.spotify.com/artist/YOUR_MRCONEMAN_ID" target="_blank" rel="noopener">
+          <svg class="svg-spotify" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0a12 12 0 1 0 0 24A12 12 0 0 0 12 0zm5.36 17.28a.9.9 0 0 1-1.24.3 12.53 12.53 0 0 0-10.3-.96.9.9 0 1 1-.64-1.7 14.35 14.35 0 0 1 11.8 1.1c.42.24.57.78.38 1.26zm1.68-3.29a1 1 0 0 1-1.38.34 15.9 15.9 0 0 0-13.09-1.2 1 1 0 1 1-.7-1.88 17.9 17.9 0 0 1 14.77 1.36 1 1 0 0 1 .4 1.38zm.15-3.45a1.16 1.16 0 0 1-1.6.4 19.9 19.9 0 0 0-16.43-1.52 1.16 1.16 0 0 1-.79-2.19 22 22 0 0 1 18.2 1.67 1.16 1.16 0 0 1 .62 1.64z"/>
+          </svg>
+          <span>Spotify — MrConeman</span>
+        </a>
+
+        <!-- Spotify — Dead Addiction -->
+        <a class="btn" href="https://open.spotify.com/artist/YOUR_DEAD_ADDICTION_ID" target="_blank" rel="noopener">
+          <svg class="svg-spotify" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0a12 12 0 1 0 0 24A12 12 0 0 0 12 0zm5.36 17.28a.9.9 0 0 1-1.24.3 12.53 12.53 0 0 0-10.3-.96.9.9 0 1 1-.64-1.7 14.35 14.35 0 0 1 11.8 1.1c.42.24.57.78.38 1.26zm1.68-3.29a1 1 0 0 1-1.38.34 15.9 15.9 0 0 0-13.09-1.2 1 1 0 1 1-.7-1.88 17.9 17.9 0 0 1 14.77 1.36 1 1 0 0 1 .4 1.38zm.15-3.45a1.16 1.16 0 0 1-1.6.4 19.9 19.9 0 0 0-16.43-1.52 1.16 1.16 0 0 1-.79-2.19 22 22 0 0 1 18.2 1.67 1.16 1.16 0 0 1 .62 1.64z"/>
+          </svg>
+          <span>Spotify — Dead Addiction</span>
+        </a>
+
+        <!-- YouTube — MrConeman -->
+        <a class="btn" href="https://www.youtube.com/mrconeman" target="_blank" rel="noopener">
+          <svg class="svg-youtube" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12c0 1.9.2 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.3-1.9.5-3.9.5-5.8 0-1.9-.2-3.9-.5-5.8zM9.6 15.5V8.5l6.2 3.5-6.2 3.5z"/>
+          </svg>
+          <span>YouTube — MrConeman</span>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="wrap">© <span id="year"></span> MrConeman</div>
