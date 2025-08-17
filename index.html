@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MrConeman — Composer for Games & Media</title>
+  <meta name="description" content="Composer for games & media. Orchestral, electronic, rock/metal, folk. Seamless loops, stems, game‑ready mixes." />
+  <style>
+    :root{
+      --bg:#0a0a0a;--panel:#131316;--muted:#8b8b93;--text:#f4f4f5;--accent:#6ea8ff;--accent2:#8affc1;
+      --card:#16171b;--border:#24252b;--shadow:0 10px 30px rgba(0,0,0,.45)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{padding:64px 0 24px;border-bottom:1px solid var(--border);text-align:center}
+    header h1{font-size:42px;margin:0 0 8px}
+    header p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .title{display:flex;align-items:center;gap:12px;margin:0 0 6px}
+    .title .dot{width:10px;height:10px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
+    .muted{color:var(--muted)}
+    .player{display:flex;align-items:center;gap:12px;margin-top:10px}
+    button{appearance:none;border:1px solid var(--border);background:#1d1f24;color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer}
+    button:hover{background:#23262d}
+    .progress{flex:1;height:6px;background:#222;border-radius:999px;position:relative;overflow:hidden}
+    .bar{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .1s}
+    .section{padding:36px 0;border-bottom:1px solid var(--border)}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:12px;color:#0d1b2a;background:var(--accent2);padding:4px 8px;border-radius:999px}
+    footer{padding:36px 0;text-align:center;color:var(--muted)}
+    .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--muted)}
+    /* small helper styles for track list */
+    .track-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>MrConeman</h1>
+      <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section" id="featured">
+      <h2>Featured Tracks</h2>
+      <p class="muted">Each track plays its intro then loops twice automatically before a gentle fade. Loop points are indicated in the notes.</p>
+
+      <div class="grid" id="tracks">
+        <!-- Duplicate this .card block for each portfolio track -->
+        <article class="card" data-file="audio/skyreach_outpost.mp3" data-intro="0" data-loopStart="30" data-fadeOnLoops="2">
+          <h3 class="title"><span class="dot"></span>Skyreach Outpost</h3>
+          <div class="track-meta">
+            <span class="muted">Serene hub theme • Adventure</span>
+            <span class="pill">Intro 0:00–0:30 • Loop 0:30→end</span>
+          </div>
+          <div class="player">
+            <button class="play">Play</button>
+            <div class="progress"><div class="bar"></div></div>
+            <span class="time muted">0:00</span>
+          </div>
+        </article>
+
+        <article class="card" data-file="audio/clockwork_market.mp3" data-intro="10" data-loopStart="10" data-fadeOnLoops="2">
+          <h3 class="title"><span class="dot"></span>Clockwork Market</h3>
+          <div class="track-meta">
+            <span class="muted">Steampunk bazaar • RPG</span>
+            <span class="pill">Intro 0:00–0:10 • Loop 0:10→end</span>
+          </div>
+          <div class="player">
+            <button class="play">Play</button>
+            <div class="progress"><div class="bar"></div></div>
+            <span class="time muted">0:00</span>
+          </div>
+        </article>
+
+        <article class="card" data-file="audio/track3.mp3" data-intro="0" data-loopStart="12" data-fadeOnLoops="2">
+          <h3 class="title"><span class="dot"></span>[Track 3]</h3>
+          <div class="track-meta">
+            <span class="muted">Battle Theme • Action/Metroidvania</span>
+            <span class="pill">Intro 0:00–0:12 • Loop 0:12→end</span>
+          </div>
+          <div class="player">
+            <button class="play">Play</button>
+            <div class="progress"><div class="bar"></div></div>
+            <span class="time muted">0:00</span>
+          </div>
+        </article>
+
+        <article class="card" data-file="audio/track4.mp3" data-intro="0" data-loopStart="24" data-fadeOnLoops="2">
+          <h3 class="title"><span class="dot"></span>[Track 4]</h3>
+          <div class="track-meta">
+            <span class="muted">Atmospheric Snow • Exploration</span>
+            <span class="pill">Intro 0:00–0:24 • Loop 0:24→end</span>
+          </div>
+          <div class="player">
+            <button class="play">Play</button>
+            <div class="progress"><div class="bar"></div></div>
+            <span class="time muted">0:00</span>
+          </div>
+        </article>
+
+        <article class="card" data-file="audio/track5.mp3" data-intro="0" data-loopStart="8" data-fadeOnLoops="2">
+          <h3 class="title"><span class="dot"></span>[Track 5]</h3>
+          <div class="track-meta">
+            <span class="muted">Beat-'em-up Stage • Groove</span>
+            <span class="pill">Intro 0:00–0:08 • Loop 0:08→end</span>
+          </div>
+          <div class="player">
+            <button class="play">Play</button>
+            <div class="progress"><div class="bar"></div></div>
+            <span class="time muted">0:00</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a Northern Ireland–based composer for games & media. I blend guitar-driven energy with orchestral, electronic, and folk textures. I deliver game‑ready assets: seamless loops, stems on request, and mixes that sit with SFX and VO.</p>
+      <div class="badges">
+        <span class="badge">Orchestral Hybrid</span>
+        <span class="badge">Rock / Metal</span>
+        <span class="badge">Synth / Ambient</span>
+        <span class="badge">Celtic / Folk</span>
+        <span class="badge">Loopable • Stems • Cues</span>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hello@mrconeman.io">hello@mrconeman.io</a> • Discord: <code>MrConeman#0000</code></p>
+      <p class="muted">Available for indie projects (Steam/Switch/PC). Happy to provide a short demo to see if we’re a fit.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> MrConeman. Built for fast loading. No cookies. </div>
+  </footer>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple audio player that supports: intro → loop x2 → fade-out
+    const cards = document.querySelectorAll('#tracks .card');
+
+    cards.forEach(card => {
+      const src = card.dataset.file;
+      const intro = parseFloat(card.dataset.intro || 0); // seconds where intro ends
+      const loopStart = parseFloat(card.dataset.loopstart || 0); // seconds where looping begins
+      const fadeOnLoops = parseInt(card.dataset.fadeonloops || 2, 10); // how many loops before fade
+
+      const btn = card.querySelector('.play');
+      const bar = card.querySelector('.bar');
+      const timeEl = card.querySelector('.time');
+
+      const audio = new Audio(src);
+      audio.preload = 'metadata';
+      audio.volume = 1;
+
+      let loopsDone = 0;
+      let isPlaying = false;
+
+      // Update progress
+      function fmt(t){const m=Math.floor(t/60),s=Math.floor(t%60);return `${m}:${s.toString().padStart(2,'0')}`}
+      function update(){
+        if(!audio.duration) return;
+        const pct = (audio.currentTime / audio.duration) * 100;
+        bar.style.width = pct + '%';
+        timeEl.textContent = fmt(audio.currentTime);
+        if(isPlaying) requestAnimationFrame(update);
+      }
+
+      // Loop handler
+      audio.addEventListener('timeupdate', () => {
+        if(audio.currentTime >= audio.duration){ // safety end
+          audio.currentTime = loopStart; audio.play();
+        }
+        // Detect end and loop back to loopStart
+        if(audio.duration && audio.currentTime >= audio.duration - 0.02){
+          loopsDone++;
+          if(loopsDone >= fadeOnLoops){
+            // fade out over 4s then stop
+            const startVol = audio.volume; const fadeDur = 4; const start = performance.now();
+            function fade(ts){
+              const e = (ts - start)/ (fadeDur*1000);
+              audio.volume = Math.max(0, startVol * (1-e));
+              if(e < 1) requestAnimationFrame(fade); else { audio.pause(); audio.currentTime = 0; audio.volume = 1; btn.textContent='Play'; isPlaying=false; }
+            }
+            requestAnimationFrame(fade);
+          } else {
+            audio.currentTime = loopStart; // seamless loop
+          }
+        }
+      });
+
+      btn.addEventListener('click', () => {
+        if(!isPlaying){
+          // Reset state & start from 0 (intro plays once)
+          audio.currentTime = 0; loopsDone = 0; audio.volume = 1;
+          audio.play(); isPlaying = true; btn.textContent='Pause'; requestAnimationFrame(update);
+        } else {
+          audio.pause(); isPlaying = false; btn.textContent='Play';
+        }
+      });
+
+      audio.addEventListener('ended', ()=>{btn.textContent='Play'; isPlaying=false});
+    });
+  </script>
+</body>
+</html>
