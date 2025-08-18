@@ -65,8 +65,6 @@
     .player h3{margin:0 0 4px}
     .player .muted{color:var(--muted);margin:0 0 10px}
     .player audio{width:100%;display:block;margin:6px 0 10px}
-    .pill{ display:inline-block; font-size:12px; border:1px solid var(--line);
-      border-radius:999px; padding:6px 10px; color:#0b2a5f; background:#f0f6ff }
 
     /* About teaser with profile image */
     .aboutTeaser{
@@ -108,7 +106,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-       <a href="credits.html">Credits</a>
+      <a href="credits.html">Credits</a>
     </nav>
   </header>
 
@@ -138,57 +136,47 @@
           <div class="tracks" id="trackList">
             <div class="track" data-file="audio/skyreach_outpost.mp3"
                  data-title="Skyreach Outpost"
-                 data-sub="Serene hub theme • Adventure"
-                 data-notes="Intro 0:00–0:30 • Loop 0:30→end">
+                 data-sub="Serene hub theme • Adventure">
               <div>
                 <strong>Skyreach Outpost</strong>
                 <div><small>Serene hub theme • Adventure</small></div>
               </div>
-              <small>2:24</small>
             </div>
 
             <div class="track" data-file="audio/clockwork_market.mp3"
                  data-title="Clockwork Market"
-                 data-sub="Steampunk bazaar • RPG"
-                 data-notes="Intro 0:00–0:10 • Loop 0:10→end">
+                 data-sub="Steampunk bazaar • RPG">
               <div>
                 <strong>Clockwork Market</strong>
                 <div><small>Steampunk bazaar • RPG</small></div>
               </div>
-              <small>1:50</small>
             </div>
 
             <div class="track" data-file="audio/track3.mp3"
                  data-title="[Track 3]"
-                 data-sub="Battle Theme • Action/Metroidvania"
-                 data-notes="Intro 0:00–0:12 • Loop 0:12→end">
+                 data-sub="Battle Theme • Action/Metroidvania">
               <div>
                 <strong>[Track 3]</strong>
                 <div><small>Battle Theme • Action/Metroidvania</small></div>
               </div>
-              <small>~2:00</small>
             </div>
 
             <div class="track" data-file="audio/track4.mp3"
                  data-title="[Track 4]"
-                 data-sub="Atmospheric Snow • Exploration"
-                 data-notes="Intro 0:00–0:24 • Loop 0:24→end">
+                 data-sub="Atmospheric Snow • Exploration">
               <div>
                 <strong>[Track 4]</strong>
                 <div><small>Atmospheric Snow • Exploration</small></div>
               </div>
-              <small>~2:20</small>
             </div>
 
             <div class="track" data-file="audio/track5.mp3"
                  data-title="[Track 5]"
-                 data-sub="Beat-’em-up Stage • Groove"
-                 data-notes="Intro 0:00–0:08 • Loop 0:08→end">
+                 data-sub="Beat-’em-up Stage • Groove">
               <div>
                 <strong>[Track 5]</strong>
                 <div><small>Beat-’em-up Stage • Groove</small></div>
               </div>
-              <small>~1:45</small>
             </div>
           </div>
         </section>
@@ -228,7 +216,6 @@
         <h3 id="pTitle">Skyreach Outpost</h3>
         <p class="muted" id="pSub">Serene hub theme • Adventure</p>
         <audio id="audio" controls preload="metadata" src="audio/skyreach_outpost.mp3"></audio>
-        <div class="pill" id="pNotes">Intro 0:00–0:30 • Loop 0:30→end</div>
         <div id="pErr" class="muted" style="display:none; margin-top:8px; font-size:13px;">
           Couldn’t load this audio. Please refresh or try again later.
         </div>
@@ -254,18 +241,19 @@
     const audio = document.getElementById('audio');
     const pTitle = document.getElementById('pTitle');
     const pSub = document.getElementById('pSub');
-    const pNotes = document.getElementById('pNotes');
     const pErr = document.getElementById('pErr');
 
     list.addEventListener('click', (e)=>{
       const item = e.target.closest('.track');
       if (!item) return;
+
       [...list.querySelectorAll('.track')].forEach(t=>t.classList.remove('active'));
       item.classList.add('active');
+
       pTitle.textContent = item.dataset.title || '';
       pSub.textContent   = item.dataset.sub   || '';
-      pNotes.textContent = item.dataset.notes || '';
       pErr.style.display = 'none';
+
       audio.src = item.dataset.file || '';
       audio.play().catch(()=>{});
     });
