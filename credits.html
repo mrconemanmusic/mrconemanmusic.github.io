@@ -50,11 +50,14 @@
     .media{
       background:#000; position:relative;
       aspect-ratio: 16 / 9;
+      overflow:hidden;
     }
     .media img{
       position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; border:0; display:block; border-radius:12px;
-      padding-top:20px; /* shifts image content slightly down */
+      object-fit:cover; 
+      /* Show a little more of the top of the image (title) */
+      object-position: 50% 60%;
+      border:0; display:block; border-radius:12px;
     }
 
     .content{ padding:18px 18px 20px }
@@ -132,8 +135,8 @@
           </div>
 
           <p>
-            Fast-paced arcade space shooter created by tean Guddies during Ludum Dare 53.  
-            I contributed music to drive the moment-to-moment action and keep the combat flowing during gameplay.
+            Fast-paced arcade space shooter created by team Guddies during Ludum Dare 53.  
+            I composed music to drive the moment-to-moment action and keep the combat flowing during gameplay.
           </p>
 
           <div class="actions">
@@ -164,3 +167,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
