@@ -54,9 +54,9 @@
     }
     .media img{
       position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; 
-      /* Show a little more of the top of the image (title) */
-      object-position: 50% 60%;
+      object-fit:cover;
+      /* Shift focus upward to reveal more of the title at the top */
+      object-position: 50% 25%;
       border:0; display:block; border-radius:12px;
     }
 
@@ -167,3 +167,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
