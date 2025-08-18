@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Credits — MrConeman</title>
+  <meta name="description" content="Selected game credits featuring music by MrConeman." />
+  <meta property="og:title" content="Credits — MrConeman" />
+  <meta property="og:description" content="Selected game credits featuring music by MrConeman." />
+  <meta property="og:image" content="images/haulin-mass.jpg" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#ffffff; --text:#0b0c0f; --muted:#5b6773; --accent:#0b5fff;
+      --line:#e8ecf2; --panel:#f7f9fc;
+      --chip:#eef5ff; --chipText:#0b2a5f
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* Subtle background texture like the rest of the site */
+    body::before{
+      content:""; position:fixed; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.97)),
+                 url('images/bg.jpg') center/cover no-repeat;
+      filter:saturate(.85) contrast(1.05)
+    }
+
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    header{padding:54px 0 18px;border-bottom:1px solid var(--line);text-align:center}
+    header h1{font-size:42px;margin:0 0 6px}
+    header p{margin:0;color:var(--muted)}
+    nav{margin-top:8px}
+    nav a{color:var(--muted);margin:0 12px}
+    nav a:hover{color:#111}
+
+    .section{padding:28px 0;border-bottom:1px solid var(--line)}
+
+    /* Credits layout */
+    .credits-grid{display:grid;gap:22px}
+    @media(min-width:980px){ .credits-grid{ grid-template-columns: 1.1fr 1fr } }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(17,27,45,.06);
+      overflow:hidden;
+    }
+
+    .media{
+      background:#000; position:relative;
+      aspect-ratio: 16 / 9; /* keeps embeds responsive */
+    }
+    .media iframe, .media img{
+      position:absolute; inset:0; width:100%; height:100%; border:0; display:block;
+      border-radius:12px;
+    }
+    .media img{ object-fit:cover }
+
+    .content{ padding:18px 18px 20px }
+
+    .h2{font-size:26px; margin:0 0 6px}
+    .muted{ color:var(--muted) }
+
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+    .badge{font-size:12px;color:var(--chipText);background:var(--chip);padding:4px 8px;border-radius:999px}
+
+    .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border:1px solid var(--line); border-radius:10px;
+      background:#fff; color:var(--text); text-decoration:none; font-weight:600;
+    }
+    .btn:hover{ background:#fbfdff }
+
+    .btn.primary{
+      background:#0b5fff; color:#fff; border-color:#0b5fff;
+    }
+    .btn.primary:hover{ filter:brightness(.95) }
+
+    .small{ font-size:13px; color:var(--muted) }
+
+    /* Footer (with logo) */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      background-color: #fafafa;
+      border-top: 1px solid #e5e5e5;
+      color: #5b6773;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .footer-logo {
+      height: 80px; width: auto; opacity: .9; transition: opacity .3s ease; display:block;
+    }
+    .footer-logo:hover { opacity: 1 }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1>MrConeman</h1>
+    <p>Composer for Games & Media • Orchestral • Electronic • Rock/Metal • Folk</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="credits.html">Credits</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <h2 style="margin:0 0 14px">Selected Game Credits</h2>
+    <p class="muted" style="margin:0 0 26px">Playable examples of my music in released jam/indie titles.</p>
+
+    <!-- CREDIT: Haulin Mass -->
+    <article class="card">
+      <div class="credits-grid">
+        <!-- Media (embed first; image fallback stays visible if you remove the iframe) -->
+        <div class="media">
+          <!-- 🔁 Replace the IFRAME src with the real itch.io EMBED URL for the game.
+               Example formats from itch:
+               - https://itch.io/embed/1234567?linkback=true
+               - https://v6p9d9t4.ssl.hwcdn.net/html/1234567/index.html (from the Embed widget)
+               If you don't have it yet, comment the <iframe> out and the cover image will show. -->
+       
+
+          <!-- Fallback cover image (kept behind the iframe). Replace file if desired. -->
+          <img src="images/haulin-mass.jpg" alt="Haulin Mass gameplay cover" aria-hidden="true" />
+        </div>
+
+        <div class="content">
+          <h3 class="h2">Haulin Mass</h3>
+          <p class="muted" style="margin:0 0 10px">Ludum Dare 53 • Space Shooter (WebGL)</p>
+
+          <div class="badges">
+            <span class="badge">Role: Composer</span>
+            <span class="badge">Platform: itch.io</span>
+            <span class="badge">Engine: Unity (WebGL)</span>
+          </div>
+
+          <p>
+            Fast-paced arcade space shooter created during Ludum Dare 53.  
+            I contributed energetic tracks (from my Redshift material) to drive the
+            moment-to-moment action and keep the combat flowing.
+          </p>
+
+          <div class="actions">
+            <!-- Primary: Play on itch.io -->
+            <a class="btn primary" href="https://guddies.itch.io/haulin-mass" target="_blank" rel="noopener">
+              <!-- tiny external icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h7v7h-2V6.4L10.7 14 9.3 12.6 17.6 4H14V3Zm-4 4v2H5v10h10v-5h2v7H3V7h7Z"/></svg>
+              <span>Play on itch.io</span>
+            </a>
+
+            <!-- Secondary: Music cue(s) from this project (point to a track or timestamp on your site or YouTube) -->
+            <a class="btn" href="index.html#trackList" target="_self">
+              <!-- music note icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 1 10 17V8h8V3h-6Z"/></svg>
+              <span>Listen to my music</span>
+            </a>
+          </div>
+
+          <p class="small" style="margin-top:12px">
+            *Embedded player is provided by itch.io. If the frame doesn’t load in your browser, use the “Play on itch.io” button.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- (You can duplicate the <article> block above for future credits.) -->
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" aria-label="Back to Home">
+        <!-- URL-encoded space to ensure GitHub Pages serves correctly -->
+        <img src="images/Logo%20No%20Background.png" alt="MrConeman Logo" class="footer-logo" loading="lazy">
+      </a>
+      <p>© <span id="year"></span> MrConeman • Built for fast loading</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
