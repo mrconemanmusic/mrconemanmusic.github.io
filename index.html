@@ -17,7 +17,7 @@
       content:""; position:fixed; inset:0; z-index:-1;
       background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.97)),
                  url('images/bg.jpg') center/cover no-repeat;
-      filter:saturate(.85) contrast(1.05)
+      filter:saturate(.85) contrast(1.05);
     }
 
     .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -43,6 +43,7 @@
       cursor:pointer; transition:background .15s ease, border-color .15s ease;
       color:var(--text);
       background:#fff;
+      outline:0;
     }
     .tracks .track:nth-child(1){ background:#eef5ff; border-color:#d7e6ff }
     .tracks .track:nth-child(1):hover{ background:#e6f0ff }
@@ -56,6 +57,7 @@
     .tracks .track:nth-child(5):hover{ background:#ffe8ed }
     .tracks .track small{ color:var(--muted) }
     .tracks .track.active{ outline:2px solid var(--accent); background:#eef5ff; border-color:#cfe0ff }
+    .tracks .track:focus-visible{ outline:2px solid var(--accent) }
 
     /* Player (sticky on desktop) — no image */
     .player{
@@ -83,7 +85,7 @@
       transition:transform .08s ease, filter .2s ease;
     }
     .contact-btn:active{ transform:translateY(1px) }
-    .btn-email{ background:#6B7CFF } /* pleasant indigo */
+    .btn-email{ background:#6B7CFF }
     .btn-email:hover{ filter:brightness(0.95) }
     .btn-discord{ background:#5865F2 }
     .btn-discord:hover{ filter:brightness(0.95) }
@@ -119,7 +121,7 @@
         <!-- About first -->
         <section class="section" style="padding-top:0">
           <div class="aboutTeaser">
-            <img src="images/profile.jpg" class="avatar" alt="Ciaran “MrConeman” Lyttle" />
+            <img src="images/profile.jpg" class="avatar" alt="Ciaran “MrConeman” Lyttle" loading="lazy" />
             <div>
               <h3 style="margin:0 0 6px">About</h3>
               <p>Hi — I’m <strong>Ciaran “MrConeman” Lyttle</strong>, a <strong>composer for games &amp; media</strong>, based in Belfast, Ireland. I deliver <strong>game-ready assets</strong>: seamless loop edits, stems for interactive scoring, and mixes that leave room for SFX and voice. </p>
@@ -134,7 +136,8 @@
           <p class="muted">Click a track to load it in the player.</p>
 
           <div class="tracks" id="trackList">
-            <div class="track" data-file="audio/skyreach_outpost.mp3"
+            <div class="track" role="button" tabindex="0"
+                 data-file="audio/skyreach_outpost.mp3"
                  data-title="Skyreach Outpost"
                  data-sub="Serene hub theme • Adventure">
               <div>
@@ -143,7 +146,8 @@
               </div>
             </div>
 
-            <div class="track" data-file="audio/clockwork_market.mp3"
+            <div class="track" role="button" tabindex="0"
+                 data-file="audio/clockwork_market.mp3"
                  data-title="Clockwork Market"
                  data-sub="Steampunk bazaar • RPG">
               <div>
@@ -152,16 +156,19 @@
               </div>
             </div>
 
-            <div class="track" data-file="eightfold_colosseum.mp3"
+            <!-- New track -->
+            <div class="track" role="button" tabindex="0"
+                 data-file="audio/eightfold_colosseum.mp3"
                  data-title="Eightfold Colosseum"
-                 data-sub="Battle Theme • Action/Beat 'em Up/Boss Theme">
+                 data-sub="Action / Beat ’em Up / Boss Theme">
               <div>
                 <strong>Eightfold Colosseum</strong>
-                <div><small>Battle Theme • Action/Beat 'em Up/Boss Theme</small></div>
+                <div><small>Action / Beat ’em Up / Boss Theme</small></div>
               </div>
             </div>
 
-            <div class="track" data-file="audio/track4.mp3"
+            <div class="track" role="button" tabindex="0"
+                 data-file="audio/track4.mp3"
                  data-title="[Track 4]"
                  data-sub="Atmospheric Snow • Exploration">
               <div>
@@ -170,7 +177,8 @@
               </div>
             </div>
 
-            <div class="track" data-file="audio/track5.mp3"
+            <div class="track" role="button" tabindex="0"
+                 data-file="audio/track5.mp3"
                  data-title="[Track 5]"
                  data-sub="Beat-’em-up Stage • Groove">
               <div>
@@ -186,20 +194,16 @@
           <h2>Contact</h2>
 
           <div class="contact-links">
-            <!-- Email button -->
             <a class="contact-btn btn-email" href="mailto:hello@mrconeman.io">
-              <!-- White envelope -->
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2.8 8.2 5.7c.5.3 1.1.3 1.6 0L21 7.8V7H3v.8z" fill="#fff"/>
               </svg>
               <span>hello@mrconeman.io</span>
             </a>
 
-            <!-- Discord button (opens your profile/DM) -->
-            <a class="contact-btn btn-discord" href="https://discord.com/users/231138809482313728" target="_blank" rel="noopener">
-              <!-- Discord logo (white) -->
+            <a class="contact-btn btn-discord" href="https://discord.com/users/231138809482313728" target="_blank" rel="noopener noreferrer">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#fff" d="M19.54 4.23A17.3 17.3 0 0 0 15.86 3l-.18.32a16.1 16.1 0 0 1 3.04 1.49c-1.33-.63-2.68-1.07-4.05-1.31a15.9 15.9 0 0 0-3.02-.29c-1.01 0-2.01.1-3 .29-1.38.24-2.74.68-4.07 1.31.98-.6 1.99-1.1 3.03-1.49L7.14 3C5.9 3.33 4.7 3.81 3.54 4.43 1.7 7 1.07 9.47 1.21 11.9c1.23 1.82 3.05 3.1 5.18 3.88a12.76 12.76 0 0 0 .9-1.44c-.49-.18-.96-.4-1.41-.66l.34-.26c2.74 1.28 5.7 1.28 8.44 0l.34.26c-.45.26-.92.48-1.41.66.26.5.56.99.9 1.44 2.13-.78 3.95-2.06 5.18-3.88.21-3.17-.6-5.62-2.33-7.67zM9.7 12.85c-.75 0-1.36-.72-1.36-1.6 0-.89.61-1.6 1.36-1.6.76 0 1.37.71 1.36 1.6 0 .88-.6 1.6-1.36 1.6zm4.6 0c-.75 0-1.36-.72-1.36-1.6 0-.89.61-1.6 1.36-1.6.76 0 1.36.71 1.36 1.6 0 .88-.6 1.6-1.36 1.6z"/>
+                <path fill="#fff" d="M19.54 4.23A17.3 17.3 0 0 0 15.86 3l-.18.32a16.1 16.1 0 0 1 3.04 1.49c-1.33-.63-2.68-1.07-4.05-1.31a15.9 15.9 0 0 0-3.02-.29c-1.01 0-2.01.1-3 .29-1.38.24-2.74.68-4.07 1.31.98-.6 1.99-1.1 3.03-1.49L7.14 3C5.9 3.33 4.7 3.81 3.54 4.43 1.7 7 1.07 9.47 1.21 11.9c1.23 1.82 3.05 3.1 5.18 3.88a12.76 12.76 0 0 0 .9-1.44c-.49-.18-.96-.4-1.41-.66l.34-.26c2.74 1.28 5.7 1.28 8.44 0l.34.26c-.45.26-.92.48-1.41.66.26.5.56.99.9 1.44 2.13-.78 3.95-2.06 5.18-3.88.21-3.17-.6-5.62-2.33-7.67zM9.7 12.85c-.75 0-1.36-.72-1.36-1.6 0-.89.61-1.6 1.36-1.6.76 0 1.37.71 1.36 1.6 0 .88-.6 1.6-1.36 1.6z"/>
               </svg>
               <span>Discord — MrConeman</span>
             </a>
@@ -212,7 +216,7 @@
       </div>
 
       <!-- RIGHT COLUMN: Sticky player -->
-      <aside class="player" id="player">
+      <aside class="player" id="player" aria-live="polite">
         <h3 id="pTitle">Skyreach Outpost</h3>
         <p class="muted" id="pSub">Serene hub theme • Adventure</p>
         <audio id="audio" controls preload="metadata" src="audio/skyreach_outpost.mp3"></audio>
@@ -236,28 +240,43 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // click-to-load from left list
-    const list = document.getElementById('trackList');
+    const list  = document.getElementById('trackList');
     const audio = document.getElementById('audio');
-    const pTitle = document.getElementById('pTitle');
-    const pSub = document.getElementById('pSub');
-    const pErr = document.getElementById('pErr');
+    const pTitle= document.getElementById('pTitle');
+    const pSub  = document.getElementById('pSub');
+    const pErr  = document.getElementById('pErr');
 
-    list.addEventListener('click', (e)=>{
-      const item = e.target.closest('.track');
+    function loadTrack(item){
       if (!item) return;
-
+      // UI highlight
       [...list.querySelectorAll('.track')].forEach(t=>t.classList.remove('active'));
       item.classList.add('active');
 
+      // Update player text
       pTitle.textContent = item.dataset.title || '';
       pSub.textContent   = item.dataset.sub   || '';
       pErr.style.display = 'none';
 
+      // Load and play
       audio.src = item.dataset.file || '';
-      audio.play().catch(()=>{});
+      audio.play().catch(()=>{ /* autoplay blocked is fine */ });
+    }
+
+    // Mouse/touch
+    list.addEventListener('click', (e)=>{
+      const item = e.target.closest('.track');
+      if (item) loadTrack(item);
     });
 
+    // Keyboard (Enter/Space)
+    list.addEventListener('keydown', (e)=>{
+      if (e.key === 'Enter' || e.key === ' ') {
+        const item = e.target.closest('.track');
+        if (item){ e.preventDefault(); loadTrack(item); }
+      }
+    });
+
+    // Error message
     audio.addEventListener('error', ()=>{ pErr.style.display = 'block'; });
   </script>
 </body>
