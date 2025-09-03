@@ -52,11 +52,9 @@
       aspect-ratio: 16 / 9;
       overflow:hidden;
     }
-    .media img{
+    .media img, .media iframe{
       position:absolute; inset:0; width:100%; height:100%;
       object-fit:cover;
-      /* Shift focus upward to reveal more of the title at the top */
-      object-position: 50% 25%;
       border:0; display:block; border-radius:12px;
     }
 
@@ -153,6 +151,32 @@
         </div>
       </div>
     </article>
+
+    <!-- CREDIT: Indie Game Music Contest -->
+    <article class="card">
+      <div class="credits-grid">
+        <div class="media">
+          <iframe src="https://www.youtube.com/embed/600WlOOiHag" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="content">
+          <h3 class="h2">Indie Game Music Contest Entry</h3>
+          <p class="muted" style="margin:0 0 10px">2025 • Competition Showcase</p>
+
+          <div class="badges">
+            <span class="badge">Role: Composer</span>
+            <span class="badge">Format: YouTube</span>
+          </div>
+
+          <p>
+            Submission for an international competition for first-time indie game composers.  
+            I scored a retro-style racing game video with adaptive layers: upbeat funk themes for menus,  
+            rock and eurobeat-inspired tracks for the races, and reactive variations that respond to boosts,  
+            crashes, or changing positions. Aimed to capture the 90’s arcade feel while demonstrating dynamic scoring.
+          </p>
+        </div>
+      </div>
+    </article>
   </main>
 
   <footer>
@@ -167,4 +191,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
