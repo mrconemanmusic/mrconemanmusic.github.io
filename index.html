@@ -273,6 +273,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const list  = document.getElementById('trackList');
     const audio = document.getElementById('audio');
     const pTitle= document.getElementById('pTitle');
@@ -281,14 +282,36 @@
 
     function loadTrack(item){
       if (!item) return;
+      // Highlight
       [...list.querySelectorAll('.track')].forEach(t=>t.classList.remove('active'));
       item.classList.add('active');
+      // Player UI
       pTitle.textContent = item.dataset.title || '';
       pSub.textContent   = item.dataset.sub   || '';
       pErr.style.display = 'none';
+      // Load & play
       audio.src = item.dataset.file || '';
-      audio.play().catch(()=>{});
+      audio.play().catch(()=>{ /* autoplay may be blocked */ });
     }
 
+    // Click/tap
     list.addEventListener('click', (e)=>{
-     
+      const item = e.target.closest('.track');
+      if (item) loadTrack(item);
+    });
+
+    // Keyboard accessibility
+    list.addEventListener('keydown', (e)=>{
+      if (e.key === 'Enter' || e.key === ' ') {
+        const item = e.target.closest('.track');
+        if (item){ e.preventDefault(); loadTrack(item); }
+      }
+    });
+
+    // Error message
+    audio.addEventListener('error', ()=>{
+      pErr.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
